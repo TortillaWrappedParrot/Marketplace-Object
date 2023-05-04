@@ -5,10 +5,22 @@
     margin: auto;
 }
 
-input[type="text"]{
-    padding: .4em;
+#submit{
+    font-size: 160%;
+    text-align: center;
 }
 
 #Error{
     color: red;
+}
+
+input[type="text"]{
+    padding: .4em;
+}
+
+html, body{
+    height: 100%;
+    background-image: linear-gradient(to bottom right, cyan, yellow);
+    background-size: cover;
+    background-repeat: no-repeat-y;
 }

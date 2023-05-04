@@ -12,13 +12,13 @@ function validateData() {
     var desc = document.getElementById("desc");
     var price = document.getElementById("price");
     var seller = document.getElementById("seller");
-    if (name.value[0] != " " && desc.value[0] != " " && seller.value[0] != " " && isNaN(Number(price.value)) == false) {
+    if (name.value[0] != " " && desc.value[0] != " " && seller.value[0] != " " && isNaN(Number(price.value)) == false && Number(price.value) >= 0) {
         if (name && name.value && desc && desc.value && seller && seller.value) {
             return true;
         }
     }
-    if (isNaN(Number(price.value)) != false) {
-        displayError("Price input can not be converted to number", 2000);
+    if (isNaN(Number(price.value)) != false || Number(price.value) < 0) {
+        displayError("Price input can not be converted to number or is below zero", 2000);
     }
     else {
         displayError("String inputs can not contain whitespace before the first character or be blank", 2000);
