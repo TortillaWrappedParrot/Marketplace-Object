@@ -37,6 +37,15 @@ function displayError(desc, time) {
 }
 function createMarketItem() {
     if (validateData()) {
+        var name_1 = document.getElementById("name");
+        var desc = document.getElementById("desc");
+        var price = document.getElementById("price");
+        var seller = document.getElementById("seller");
         var newItem = new MarketItem();
+        newItem.Name = name_1.value;
+        newItem.Description = desc.value;
+        newItem.Price = Number(price);
+        newItem.Seller = seller.value;
+        displayItem(newItem);
     }
 }

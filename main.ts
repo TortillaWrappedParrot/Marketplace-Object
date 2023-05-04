@@ -43,6 +43,15 @@ function displayError(desc: string, time:number):void{
 
 function createMarketItem():void{
     if (validateData()){
+        let name = <HTMLInputElement>document.getElementById("name");
+        let desc = <HTMLInputElement>document.getElementById("desc");
+        let price = <HTMLInputElement>document.getElementById("price");
+        let seller = <HTMLInputElement>document.getElementById("seller");
         let newItem = new MarketItem();
+        newItem.Name = name.value;
+        newItem.Description = desc.value;
+        newItem.Price = Number(price);
+        newItem.Seller = seller.value;
+        displayItem(newItem);
     }
 }
