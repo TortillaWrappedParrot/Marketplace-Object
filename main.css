@@ -1,3 +1,14 @@
 .align{
-    text-align: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+input[type="text"]{
+    padding: .4em;
+}
+
+#error{
+    color: red;
 }
