@@ -29,7 +29,35 @@ function validateData():boolean{
 }
 
 function displayItem(item:MarketItem):void{
-
+    //get div
+    let alignDiv = document.getElementById("align");
+    //create new div for border
+    let cosmeticDiv = document.createElement("div");
+    cosmeticDiv.style.textAlign = "center";
+    cosmeticDiv.style.width = "50%";
+    cosmeticDiv.style.border = "5px Dotted Black"
+    //create title
+    let itemTitle = document.createElement("h1");
+    itemTitle.innerText = item.Name
+    itemTitle.style.margin = "0px";
+    //create desc
+    let desc = document.createElement("p");
+    desc.innerText = item.Description
+    desc.style.margin = "0px";
+    //create price
+    let price = document.createElement("p");
+    price.innerText = String(item.Price);
+    price.style.margin = "0px";
+    //create seller
+    let seller = document.createElement("h2");
+    seller.innerText = item.Seller
+    seller.style.margin = "0px";
+    //Append to div
+    alignDiv.appendChild(cosmeticDiv)
+    cosmeticDiv.appendChild(itemTitle)
+    cosmeticDiv.appendChild(desc)
+    cosmeticDiv.appendChild(price)
+    cosmeticDiv.appendChild(seller)
 }
 
 function displayError(desc: string, time:number):void{
@@ -50,7 +78,7 @@ function createMarketItem():void{
         let newItem = new MarketItem();
         newItem.Name = name.value;
         newItem.Description = desc.value;
-        newItem.Price = Number(price);
+        newItem.Price = Number(price.value);
         newItem.Seller = seller.value;
         displayItem(newItem);
     }

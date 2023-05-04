@@ -26,6 +26,28 @@ function validateData() {
     return false;
 }
 function displayItem(item) {
+    var alignDiv = document.getElementById("align");
+    var cosmeticDiv = document.createElement("div");
+    cosmeticDiv.style.textAlign = "center";
+    cosmeticDiv.style.width = "50%";
+    cosmeticDiv.style.border = "5px Dotted Black";
+    var itemTitle = document.createElement("h1");
+    itemTitle.innerText = item.Name;
+    itemTitle.style.margin = "0px";
+    var desc = document.createElement("p");
+    desc.innerText = item.Description;
+    desc.style.margin = "0px";
+    var price = document.createElement("p");
+    price.innerText = String(item.Price);
+    price.style.margin = "0px";
+    var seller = document.createElement("h2");
+    seller.innerText = item.Seller;
+    seller.style.margin = "0px";
+    alignDiv.appendChild(cosmeticDiv);
+    cosmeticDiv.appendChild(itemTitle);
+    cosmeticDiv.appendChild(desc);
+    cosmeticDiv.appendChild(price);
+    cosmeticDiv.appendChild(seller);
 }
 function displayError(desc, time) {
     var error = document.getElementById("Error");
@@ -44,7 +66,7 @@ function createMarketItem() {
         var newItem = new MarketItem();
         newItem.Name = name_1.value;
         newItem.Description = desc.value;
-        newItem.Price = Number(price);
+        newItem.Price = Number(price.value);
         newItem.Seller = seller.value;
         displayItem(newItem);
     }
